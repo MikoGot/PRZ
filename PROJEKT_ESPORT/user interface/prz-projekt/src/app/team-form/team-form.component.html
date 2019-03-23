@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Team Form</h1>
+  <form #teamForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="leagueNumber">Choose League</label>
+      <select class="form-control" id="leagueNumber" required [(ngModel)]="model.leagueNumber" name="leagueNumber">
+        <option *ngFor="let ln of leagues" [value]="ln">{{ln}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>

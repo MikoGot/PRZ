@@ -1,0 +1,26 @@
+
+<div class="jumbotron bg-transparent text-center">
+    <div *ngIf="!user" >
+      <h2 class="card-header">
+        Logging in
+      </h2>
+      <div >
+        <h3 >You are not signed in</h3>
+        <p >Sign in with Facebook:</p>
+      </div>
+      <div>
+        <button class="btn btn-primary" (click)="signInWithFB()"><span> Logi In </span></button>
+      </div>
+    </div>
+    <div *ngIf="user" >
+      <div ></div>
+      <img src="{{ user.photoUrl }}">
+      <div >
+        <h4 >{{ user.name }}</h4>
+        <p >{{ user.email }}</p>
+      </div>
+      <div >
+        <button  (click)="signOut()">Sign out</button>
+      </div>
+    </div>
+  </div>

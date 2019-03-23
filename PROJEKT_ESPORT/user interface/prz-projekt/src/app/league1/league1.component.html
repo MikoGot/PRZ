@@ -1,0 +1,11 @@
+<h2>Counter Strike League teams</h2>
+
+
+<ul class="teams">
+  <li *ngFor="let team of teams" (click)="onSelect(team)" [class.selected]="team === selectedTeam">
+    <span class="badge">{{team.teamId}}</span> {{team .name}}
+  </li> 
+</ul>
+
+
+<app-team-detail [team]="selectedTeam"></app-team-detail>
